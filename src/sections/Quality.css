@@ -1,0 +1,89 @@
+.quality__certs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.quality__cert {
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  transition: all 0.3s;
+  background: white;
+}
+.quality__cert:hover {
+  border-color: var(--green);
+  box-shadow: 0 12px 40px rgba(26,107,60,0.1);
+  transform: translateY(-4px);
+}
+
+.quality__cert-icon {
+  width: 64px; height: 64px;
+  background: rgba(26,107,60,0.08);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+  margin: 0 auto 20px;
+}
+
+.quality__cert h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.quality__cert p { font-size: 0.82rem; color: var(--gray-500); }
+
+.quality__banner {
+  background: var(--green-dark);
+  border-radius: 4px;
+  padding: 48px;
+  overflow: hidden;
+  position: relative;
+}
+.quality__banner::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+
+.quality__banner-text {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.quality__banner-text span {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding-right: 48px;
+}
+.quality__banner-text span:not(:last-child)::after {
+  content: '·';
+  position: absolute;
+  right: 0;
+  color: var(--gold);
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1024px) { .quality__certs { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .quality__certs { grid-template-columns: 1fr; }
+  .quality__banner-text { flex-direction: column; gap: 16px; text-align: center; }
+  .quality__banner-text span::after { display: none; }
+  .quality__banner-text span { padding-right: 0; }
+}

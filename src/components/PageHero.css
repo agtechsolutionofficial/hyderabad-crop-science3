@@ -1,0 +1,36 @@
+.page-hero {
+  position: relative;
+  height: 420px;
+  background: var(--green-dark);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,40,20,0.85) 40%, rgba(10,40,20,0.4));
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60px;
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.page-hero__sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  margin-top: 12px;
+  max-width: 500px;
+}
